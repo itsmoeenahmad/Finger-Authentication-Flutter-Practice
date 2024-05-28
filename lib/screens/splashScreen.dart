@@ -18,8 +18,15 @@ class _splashScreenState extends State<splashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 5),() async {
-      bool? check = await SharedPreferencesClass.get_finger();
-      if(check!)
+
+      bool? check = false;
+      check = await SharedPreferencesClass.get_finger();
+      print('check is ${check}');
+
+      String condition = check.toString();
+
+
+      if(condition=='true')
         {
           Navigator.push(context, MaterialPageRoute(builder: (context)=>
           homeScreen()

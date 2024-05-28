@@ -14,6 +14,8 @@ class SharedPreferencesClass {
 
   static Future<bool?> get_finger() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    print('called');
+    print(check);
     return prefs.getBool(check.toString());
   }
 
